@@ -1,0 +1,24 @@
+# Dataset downloads
+/data
+*.tar.gz
+*.tgz
+*.zip
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch/Model checkpoints (if you decide to save models later)
+*.pt
+*.pth
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+
+# OS generated files
+.DS_Store
+Thumbs.db
