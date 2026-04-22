@@ -1,4 +1,4 @@
-# The Self-Pruning Neural Network ✂️🧠
+# The Self-Pruning MLP
 
 **Author:** Arnav Dogra
 
@@ -6,9 +6,9 @@ This repository contains a custom PyTorch implementation of a multi-layer percep
 
 By augmenting standard linear layers with learnable gating parameters and applying L1 regularization, the network learns to identify and sever its weakest connections on the fly, optimizing its architecture for deployment in resource-constrained environments.
 
-## 🚀 Quick Start
+ Quick Start
 
-**1. Clone the repository:**
+1. Clone the repository:**
 ```bash
 git clone [https://github.com/ArnavDogra/Self_pruning_mlp.git](https://github.com/ArnavDogra/Self_pruning_mlp.git)
 cd Self_pruning_mlp 
@@ -32,7 +32,7 @@ The SparsityLoss is defined as the L1 norm (sum of absolute values) of all sigmo
 
 If a specific weight's contribution to minimizing the classification loss does not outweigh this constant L1 penalty, the optimizer drives its corresponding gate to 0.0. Because the gates are bound between 0 and 1 via the sigmoid function, this creates a highly polarized, bimodal distribution: critical gates remain near 1.0, while extraneous gates collapse to 0, effectively pruning the connection.
 
-📊 Experimental Results
+Experimental Results
 The network was trained on CIFAR-10 across a sweep of lambda values to observe the trade-off between model sparsity (defined as gates < 0.01) and test accuracy.
 
 Regularization Strength (lambda)	Test Accuracy (%)	Sparsity Level (%)
